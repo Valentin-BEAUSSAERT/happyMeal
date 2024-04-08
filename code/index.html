@@ -6,4 +6,77 @@
     <title>HappyMeal</title>
   </head>
   <body></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Tailwind</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="shadow-md" style="background-color: #fffff4">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo qui sert de lien vers la page d'accueil -->
+          <a href="#" class="flex items-center py-5 px-2">
+            <img src="../assets/logo.png" alt="Logo" class="h-12 w-auto mr-2" />
+            <!-- Assurez-vous de remplacer avec le bon chemin d'accès -->
+          </a>
+          <!-- Liens primaires -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
+              >Liste de Courses</a
+            >
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
+              >Liste de Favoris</a
+            >
+          </div>
+          <!-- Barre de recherche -->
+          <div class="flex items-center">
+            <input
+              type="search"
+              placeholder="Rechercher..."
+              class="px-2 py-1 border-2 border-gray-300 rounded-md mr-2"
+            />
+            <button
+              type="submit"
+              class="px-4 py-1 text-white bg-gray-800 rounded-md"
+            >
+              Chercher
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <footer class="shadow-md" style="background-color: #fffff4">
+      <div
+        class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 text-center gap-4 items-center"
+      >
+        <!-- Logo -->
+        <div>
+          <img
+            src="../assets/logo.png"
+            alt="Logo"
+            class="h-12 w-auto mx-auto"
+          />
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-gray-700 text-sm">
+          &copy; 2024 LaPlateforme. Tous droits réservés.<br />8 Rue d'Hozier
+          Marseille 13002
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="flex justify-center gap-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Facebook</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Instagram</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Tik-Tok</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Snapchat</a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
