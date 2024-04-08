@@ -13,16 +13,19 @@
       <div class="flex justify-between items-center">
         <!-- Logo qui sert de lien vers la page d'accueil -->
         <a href="#" class="flex items-center py-5 px-2">
-          <img src="../assets/logo.png" alt="Logo" class="h-12 w-26 mr-2"> <!-- Assurez-vous de remplacer avec le bon chemin d'accès -->
+          <img src="../assets/logo.png" alt="Logo" class="h-12 w-auto mr-2"> <!-- Assurez-vous de remplacer avec le bon chemin d'accès -->
         </a>
         <!-- Liens primaires -->
         <div class="hidden md:flex items-center space-x-1">
           <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Liste de Courses</a>
           <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Liste de Favoris</a>
         </div>
-        <!-- Liens secondaires -->
-        <div class="hidden md:flex items-center space-x-1">
-          <!-- Ajoutez vos icônes ici -->
+        <!-- Barre de recherche -->
+        <div class="flex items-center">
+          <input type="search" placeholder="Rechercher..." class="px-2 py-1 border-2 border-gray-300 rounded-md mr-2">
+          <button type="submit" class="px-4 py-1 text-white bg-gray-800 rounded-md">
+            Chercher
+          </button>
         </div>
       </div>
     </div>
