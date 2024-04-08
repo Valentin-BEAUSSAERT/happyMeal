@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste Favoris</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-color: #ededda">
+    <nav
+      class="shadow-md rounded-br-full rounded-bl-xl"
+      style="background-color: #7d6a6a"
+    >
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo qui sert de lien vers la page d'accueil -->
+          <a href="#" class="flex items-center py-5 px-2">
+            <img src="../assets/logo.png" alt="Logo" class="h-12 w-auto mr-2" />
+            <!-- Assurez-vous de remplacer avec le bon chemin d'accès -->
+          </a>
+          <!-- Liens primaires -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
+              >Liste de Courses</a
+            >
+            <a
+              href="#"
+              class="py-5 px-3 text-gray-700 hover:text-gray-900 font-bold"
+              >Liste de Favoris</a
+            >
+          </div>
+          <!-- Barre de recherche -->
+          <div class="flex items-center">
+            <input
+              type="search"
+              placeholder="Rechercher..."
+              class="px-2 py-1 border-2 border-gray-300 rounded-md mr-2"
+            />
+            <button
+              type="submit"
+              class="px-4 py-1 text-white bg-gray-800 rounded-md"
+            >
+              Chercher
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- TITRE : Liste de Favoris -->
+    <h1 class="text-3xl font-bold mb-4">Liste de Favoris:</h1>
+
+    <!-- CAROUSEL -->
+    <div class="flex flex-wrap justify-center">
+      <!-- CAROUSEL ITEM 1 -->
+      <div class="w-full sm:w-1/2 lg:w-1/4 p-4 shadow-lg">
+        <div class="relative">
+          <img
+            src="/code/images/pexels-tim-douglas-6210872.jpg"
+            alt="Image de la recette 1"
+            class="w-full h-auto"
+          />
+          <span
+            class="absolute bottom-0 left-0 bg-black text-white p-2 text-sm font-bold"
+            >Poulet rôti aux fines herbes</span
+          >
+          <span class="absolute top-0 right-0 p-2 text-yellow-500"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.996 16.4l-4.3 2.186c-.73.372-1.674-.155-1.514-.985l1.27-5.884L.25 7.426c-.58-.56-.254-1.515.518-1.64l6.964-.998L9.4.818c.394-.75 1.346-.75 1.74 0l2.668 4.97 6.964.998c.776.125 1.1 1.08.52 1.64l-5.23 4.297 1.27 5.884c.16.83-.783 1.357-1.514.985l-4.3-2.186z"
+                clip-rule="evenodd"
+              /></svg
+          ></span>
+        </div>
+      </div>
+
+      <!-- CAROUSEL ITEM 2 -->
+      <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+        <div class="relative">
+          <img
+            src="/code/images/salade de quinoa.jpg"
+            alt="Image de la recette 2"
+            class="w-full h-auto"
+          />
+          <span
+            class="absolute bottom-0 left-0 bg-black text-white p-2 text-sm font-bold"
+            >Salade de quinoa aux légumes</span
+          >
+          <span class="absolute top-0 right-0 p-2 text-yellow-500"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.996 16.4l-4.3 2.186c-.73.372-1.674-.155-1.514-.985l1.27-5.884L.25 7.426c-.58-.56-.254-1.515.518-1.64l6.964-.998L9.4.818c.394-.75 1.346-.75 1.74 0l2.668 4.97 6.964.998c.776.125 1.1 1.08.52 1.64l-5.23 4.297 1.27 5.884c.16.83-.783 1.357-1.514.985l-4.3-2.186z"
+                clip-rule="evenodd"
+              /></svg
+          ></span>
+        </div>
+      </div>
+
+      <!-- CAROUSEL ITEM 3 -->
+      <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+        <div class="relative">
+          <img
+            src="/code/images/soupe lentilles.jpg"
+            alt="Image de la recette 3"
+            class="w-full h-auto"
+          />
+          <span
+            class="absolute bottom-0 left-0 bg-black text-white p-2 text-sm font-bold"
+            >Soupe de Lentilles</span
+          >
+          <span class="absolute top-0 right-0 p-2 text-yellow-500"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.996 16.4l-4.3 2.186c-.73.372-1.674-.155-1.514-.985l1.27-5.884L.25 7.426c-.58-.56-.254-1.515.518-1.64l6.964-.998L9.4.818c.394-.75 1.346-.75 1.74 0l2.668 4.97 6.964.998c.776.125 1.1 1.08.52 1.64l-5.23 4.297 1.27 5.884c.16.83-.783 1.357-1.514.985l-4.3-2.186z"
+                clip-rule="evenodd"
+              /></svg
+          ></span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center">
+        <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+          <div class="relative">
+            <img
+              src="/code/images/tarte aux pommes.jpg"
+              alt="Image de la recette 4"
+              class="w-full h-svh"
+            />
+            <span
+              class="absolute bottom-0 left-0 bg-black text-white p-2 text-sm font-bold"
+              >Tartes aux pommes</span
+            >
+            <span class="absolute top-0 right-0 p-2 text-yellow-500"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.996 16.4l-4.3 2.186c-.73.372-1.674-.155-1.514-.985l1.27-5.884L.25 7.426c-.58-.56-.254-1.515.518-1.64l6.964-.998L9.4.818c.394-.75 1.346-.75 1.74 0l2.668 4.97 6.964.998c.776.125 1.1 1.08.52 1.64l-5.23 4.297 1.27 5.884c.16.83-.783 1.357-1.514.985l-4.3-2.186z"
+                  clip-rule="evenodd"
+                /></svg
+            ></span>
+          </div>
+        </div>
+        <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+          <div class="relative">
+            <img
+              src="/code/images/pates carbonara.jpg"
+              alt="Image de la recette 3"
+              class="w-full h-svh"
+            />
+            <span
+              class="absolute bottom-0 left-0 bg-black text-white p-2 text-sm font-bold"
+              >Pates Carbonara</span
+            >
+            <span class="absolute top-0 right-0 p-2 text-yellow-500"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.996 16.4l-4.3 2.186c-.73.372-1.674-.155-1.514-.985l1.27-5.884L.25 7.426c-.58-.56-.254-1.515.518-1.64l6.964-.998L9.4.818c.394-.75 1.346-.75 1.74 0l2.668 4.97 6.964.998c.776.125 1.1 1.08.52 1.64l-5.23 4.297 1.27 5.884c.16.83-.783 1.357-1.514.985l-4.3-2.186z"
+                  clip-rule="evenodd"
+                /></svg
+            ></span>
+          </div>
+        </div>
+        <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+          <div class="relative">
+            <img
+              src="/code/images/risotto.jpg"
+              alt="Image de la recette 3"
+              class="w-full h-full"
+            />
+            <span
+              class="absolute bottom-0 left-0 bg-black text-white p-2 text-sm font-bold"
+              >Risotto aux champignons</span
+            >
+            <span class="absolute top-0 right-0 p-2 text-yellow-500"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.996 16.4l-4.3 2.186c-.73.372-1.674-.155-1.514-.985l1.27-5.884L.25 7.426c-.58-.56-.254-1.515.518-1.64l6.964-.998L9.4.818c.394-.75 1.346-.75 1.74 0l2.668 4.97 6.964.998c.776.125 1.1 1.08.52 1.64l-5.23 4.297 1.27 5.884c.16.83-.783 1.357-1.514.985l-4.3-2.186z"
+                  clip-rule="evenodd"
+                /></svg
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="shadow-md rounded-tl-full" style="background-color: #7d6a6a">
+      <div
+        class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 text-center gap-4 items-center"
+      >
+        <!-- Logo -->
+        <div>
+          <img
+            src="../assets/logo.png"
+            alt="Logo"
+            class="h-12 w-auto mx-auto"
+          />
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-gray-700 text-sm">
+          &copy; 2024 LaPlateforme. Tous droits réservés.<br />8 Rue d'Hozier
+          Marseille 13002
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="flex justify-center gap-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Facebook</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Instagram</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Tik-Tok</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Snapchat</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
