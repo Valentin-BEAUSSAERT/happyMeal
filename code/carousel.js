@@ -12,7 +12,7 @@ function setImage(imagePath) {
   }
   
   let currentImageIndex = 0;
-  const images = ['../assets/1.jpeg', '../assets/2.jpeg', '../assets/3.jpeg', '../assets/4.jpeg', '../assets/5.webp'];
+  const images = ['../assets/6.webp', "../assets/7.webp"];
   
   function nextImage() {
     currentImageIndex = (currentImageIndex + 1) % images.length;
@@ -25,5 +25,7 @@ function setImage(imagePath) {
   }
   
   // Faire défiler automatiquement les images
-  setInterval(nextImage, 5000);
+
+
+  // setInterval(nextImage, 5000);
   
