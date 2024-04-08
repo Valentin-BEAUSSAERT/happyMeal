@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar Tailwind</title>
+  <title>Happy</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
@@ -23,13 +23,28 @@
         <!-- Barre de recherche -->
         <div class="flex items-center">
           <input type="search" placeholder="Rechercher..." class="px-2 py-1 border-2 border-gray-300 rounded-md mr-2">
-          <button type="submit" class="px-4 py-1 text-white bg-gray-800 rounded-md">
-            Chercher
-          </button>
+          <button type="submit" class="px-4 py-1 text-white bg-gray-800 rounded-md">Rechercher</button>
         </div>
       </div>
     </div>
   </nav>
+
+  <div class="max-w-4xl mx-auto my-8">
+    <div class="relative">
+      <!-- Grande image -->
+      <img id="mainImage" src="../assets/1.jpeg" alt="Image principale" class="w-full h-auto mb-4">
+    </div>
+    
+    <!-- Miniatures -->
+    <div class="flex justify-center space-x-2">
+      <img onclick="setImage('../assets/1.jpeg')" src="../assets/1.jpeg" alt="Miniature 1" class="w-24 h-24 object-cover cursor-pointer">
+      <img onclick="setImage('../assets/2.jpeg')" src="../assets/2.jpeg" alt="Miniature 2" class="w-24 h-24 object-cover cursor-pointer">
+      <img onclick="setImage('../assets/3.jpeg')" src="../assets/3.jpeg" alt="Miniature 3" class="w-24 h-24 object-cover cursor-pointer">
+      <img onclick="setImage('../assets/4.jpeg')" src="../assets/4.jpeg" alt="Miniature 4" class="w-24 h-24 object-cover cursor-pointer">
+      <!-- Ajoutez autant d'images que vous le souhaitez, en suivant ce modèle -->
+    </div>
+  </div>
+
   <footer class="shadow-md" style="background-color: #FFFFF4;">
     <div class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 text-center gap-4 items-center">
       
