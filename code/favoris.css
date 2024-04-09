@@ -15,8 +15,13 @@
 .like-button.clicked .heart {
   color: black; /* Couleur noire lorsque "liké" */
 }
-
-.flex flex-wrap justify-center img {
-  min-width: 430px;
-  min-height: 290px;
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 58px;
+  background-color: #f8f9fa;
+  text-align: center;
+  margin-top: 10px;
 }
