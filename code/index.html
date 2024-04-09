@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <nav class="shadow-md" style="background-color: #FFFFF4;">
+  <nav class="shadow-md" style="background-color: #abf1ce;">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between items-center">
         <!-- Logo qui sert de lien vers la page d'accueil -->
@@ -31,15 +31,17 @@
   </nav>
 
   <div class="max-w-4xl mx-auto my-8">
-    <div class="relative">
+    <div class="relative text-center">
         <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-md cursor-pointer z-10">
             &lt;
         </button>
-      <!-- Grande image -->
-        <img id="mainImage" src="../assets/30.webp" alt="Image principale" class="w-full h-auto mb-4">
+        <!-- Grande image -->
+        <img id="mainImage" src="../assets/30.webp" alt="Image principale" class="w-full h-auto mb-2">
+        <!-- Texte d'indication pour cliquer sur l'image -->
+        <p class="text-sm text-gray-600">Cliquez sur l'image pour voir la recette</p>
         <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-md cursor-pointer z-10">
             &gt;
-          </button>
+        </button>
     </div>
     
     <!-- Miniatures -->
@@ -57,14 +59,13 @@
         <img onclick="setImage('../assets/38.webp', 10)" src="../assets/38.webp" alt="Miniature 32" class="min-w-max w-24 h-24 object-cover cursor-pointer">
         <img onclick="setImage('../assets/39.webp', 11)" src="../assets/39.webp" alt="Miniature 33" class="min-w-max w-24 h-24 object-cover cursor-pointer">
         <img onclick="setImage('../assets/40.webp', 12)" src="../assets/40.webp" alt="Miniature 34" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        
 
         
       <!-- Ajoutez autant d'images que vous le souhaitez, en suivant ce modèle -->
     </div>
   </div>
     <!-- Footer-->
-  <footer class="bg-gray-100 shadow-md shadow-top" style="background-color: #FFFFF4;">
+  <footer class="bg-gray-100 shadow-md shadow-top" style="background-color: #abf1ce;">
     <div class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 text-center gap-4 items-center">
       
       <!-- Logo -->
