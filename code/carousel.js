@@ -1,14 +1,12 @@
-function setImage(imagePath) {
+function setImage(imagePath, index) {
     const mainImage = document.getElementById('mainImage');
     mainImage.src = imagePath;
+    mainImage.dataset.index = index; // Stocker l'index de l'image pour une utilisation ultérieure
   
-    // Ajouter la classe pour l'effet de transition
     mainImage.classList.add('fade');
-  
-    // Supprimer la classe après que l'animation soit terminée pour permettre à l'effet de se rejouer
     setTimeout(() => {
       mainImage.classList.remove('fade');
-    }, 1000); // Correspond à la durée de l'animation
+    }, 500); // Correspond à la durée de l'animation
   }
   
   let currentImageIndex = 0;
@@ -35,4 +33,17 @@ function setImage(imagePath) {
   
   // Décommentez la ligne ci-dessous pour faire défiler automatiquement les images
   // setInterval(nextImage, 5000);
+  
+
+  function openModal() {
+    document.getElementById('recipeModal').classList.remove('hidden');
+    // Ici, vous pouvez également charger ou modifier dynamiquement le contenu du modal si nécessaire
+  }
+  
+  function closeModal() {
+    document.getElementById('recipeModal').classList.add('hidden');
+  }
+  
+  // Écouteur d'événements pour l'ouverture du modal
+  document.getElementById('mainImage').addEventListener('click', openModal);
   

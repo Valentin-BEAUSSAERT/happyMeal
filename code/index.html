@@ -44,17 +44,17 @@
     
     <!-- Miniatures -->
     <div class="flex overflow-x-auto space-x-2 py-4">
-        <img onclick="setImage('../assets/30.webp')" src="../assets/30.webp" alt="Miniature 24" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/31.webp')" src="../assets/31.webp" alt="Miniature 25" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/32.webp')" src="../assets/32.webp" alt="Miniature 26" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/33.webp')" src="../assets/33.webp" alt="Miniature 27" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/34.webp')" src="../assets/34.webp" alt="Miniature 28" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/35.webp')" src="../assets/35.webp" alt="Miniature 29" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/36.webp')" src="../assets/36.webp" alt="Miniature 30" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/37.webp')" src="../assets/37.webp" alt="Miniature 31" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/38.webp')" src="../assets/38.webp" alt="Miniature 32" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/39.webp')" src="../assets/39.webp" alt="Miniature 33" class="min-w-max w-24 h-24 object-cover cursor-pointer">
-        <img onclick="setImage('../assets/40.webp')" src="../assets/40.webp" alt="Miniature 34" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/30.webp', 0)" src="../assets/30.webp" alt="Miniature 24" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/31.webp', 1)" src="../assets/31.webp" alt="Miniature 25" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/32.webp', 2)" src="../assets/32.webp" alt="Miniature 26" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/33.webp', 3)" src="../assets/33.webp" alt="Miniature 27" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/34.webp', 4)" src="../assets/34.webp" alt="Miniature 28" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/35.webp', 5)" src="../assets/35.webp" alt="Miniature 29" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/36.webp', 6)" src="../assets/36.webp" alt="Miniature 30" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/37.webp', 7)" src="../assets/37.webp" alt="Miniature 31" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/38.webp', 8)" src="../assets/38.webp" alt="Miniature 32" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/39.webp', 9)" src="../assets/39.webp" alt="Miniature 33" class="min-w-max w-24 h-24 object-cover cursor-pointer">
+        <img onclick="setImage('../assets/40.webp', 10)" src="../assets/40.webp" alt="Miniature 34" class="min-w-max w-24 h-24 object-cover cursor-pointer">
         
 
         
@@ -85,7 +85,23 @@
   
     </div>
   </footer>
-    <script src="carousel.js"></script>
+    
+    <!-- Modal -->
+    <div id="recipeModal" class="hidden fixed z-50 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-40">
+    <!-- Contenu du modal -->
+        <div class="bg-white rounded-lg m-4 p-5 max-w-xl mx-auto my-20 relative">
+      <!-- Bouton de fermeture -->
+        <button onclick="closeModal()" class="absolute top-0 right-0 m-4">Fermer</button>
+      <!-- Titre du modal -->
+        <h2 id="modalTitle" class="text-2xl mb-4">Poulet rôti aux herbes</h2>
+      <!-- Description ou contenu de la recette -->
+        <p id="modalContent">Contenu de la recette...</p>
+    </div>
+  </div>
+
+  <script src="carousel.js"></script>
+  <script src="modal.js"></script>
+  
 </body>
 </html>
   
