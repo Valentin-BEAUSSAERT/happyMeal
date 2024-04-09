@@ -12,7 +12,7 @@ function setImage(imagePath) {
   }
   
   let currentImageIndex = 0;
-  const images = ['../assets/6.webp', "../assets/7.webp", "../assets/9.webp", "../assets/10.webp", "../assets/11.webp", "../assets/12.webp", "../assets/13.webp", "../assets/14.webp", "../assets/15.webp", "../assets/17.webp", "../assets/16.webp", "../assets/18.webp"];
+  const images = ["../assets/30.webp", "../assets/31.webp", "../assets/32.webp", "../assets/33.webp", "../assets/34.webp", "../assets/35.webp", "../assets/36.webp", "../assets/37.webp", "../assets/38.webp", "../assets/39.webp", "../assets/40.webp" ];
   
   function nextImage() {
     currentImageIndex = (currentImageIndex + 1) % images.length;
