@@ -1,0 +1,22 @@
+.like-button {
+  background-color: transparent; /* Fond transparent */
+  border: none;
+  cursor: pointer;
+  position: absolute; /* Ajout de position absolue */
+  top: 0; /* Positionnement en haut */
+  right: 0; /* Positionnement à droite */
+}
+
+.heart {
+  font-size: 36px; /* Taille du cœur */
+  color: red; /* Couleur rouge par défaut */
+}
+
+.like-button.clicked .heart {
+  color: black; /* Couleur noire lorsque "liké" */
+}
+
+.flex flex-wrap justify-center img {
+  min-width: 430px;
+  min-height: 290px;
+}
