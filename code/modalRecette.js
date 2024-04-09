@@ -530,11 +530,11 @@ const data = {
     
     modalTitle.textContent = recette.nom; // Mettez le titre de la recette
     modalContent.innerHTML = `
-      <p><strong>Catégorie:</strong> ${recette.categorie}</p>
-      <p><strong>Temps de préparation:</strong> ${recette.temps_preparation}</p>
-      <h3>Ingrédients:</h3>
-      ${ingredientsHtml}
-      <h3>Étapes:</h3>
+      <p><strong>Catégorie:</strong> ${recette.categorie}</p><br>
+      <p><strong>Temps de préparation:</strong> ${recette.temps_preparation}</p><br>
+      <h3>Ingrédients:</h3><br>
+      ${ingredientsHtml}<br>
+      <h3>Étapes:</h3><br>
       ${etapesHtml}
     `; // Mettez les ingrédients et les étapes
   }
