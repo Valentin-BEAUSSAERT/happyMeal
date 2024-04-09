@@ -10,7 +10,7 @@ function setImage(imagePath, index) {
   }
   
   let currentImageIndex = 0;
-  const images = ["../assets/30.webp", "../assets/31.webp", "../assets/32.webp", "../assets/33.webp", "../assets/34.webp", "../assets/35.webp", "../assets/36.webp", "../assets/37.webp", "../assets/38.webp", "../assets/39.webp", "../assets/40.webp"];
+  const images = ["../assets/30.webp", "../assets/31.webp", "../assets/32.webp", "../assets/33.webp", "../assets/34.webp", "../assets/35.webp", "../assets/36.webp", "../assets/37.webp", "../assets/38.webp", "../assets/39.webp",];
   
   function nextImage() {
     currentImageIndex = (currentImageIndex + 1) % images.length;
@@ -33,8 +33,19 @@ function setImage(imagePath, index) {
   
   // Décommentez la ligne ci-dessous pour faire défiler automatiquement les images
   // setInterval(nextImage, 5000);
-  
 
+  // Écouteur d'événement pour exécuter la fonction au chargement complet de la page
+document.addEventListener('DOMContentLoaded', function() {
+    chooseRandomImageOnLoad();
+  
+    // Gestionnaire d'événements
+    document.getElementById('mainImage').addEventListener('click', function() {
+      const index = this.dataset.index; // Utilisez l'index stocké pour ouvrir le modal avec les bonnes infos
+      fillModalWithRecipe(index); // Cette fonction doit être définie dans `modalRecette.js`
+      openModal(); // Assurez-vous que cette fonction ouvre le modal
+    });
+  });
+  
   function openModal() {
     document.getElementById('recipeModal').classList.remove('hidden');
     // Ici, vous pouvez également charger ou modifier dynamiquement le contenu du modal si nécessaire
@@ -43,7 +54,3 @@ function setImage(imagePath, index) {
   function closeModal() {
     document.getElementById('recipeModal').classList.add('hidden');
   }
-  
-  // Écouteur d'événements pour l'ouverture du modal
-  document.getElementById('mainImage').addEventListener('click', openModal);
-  
