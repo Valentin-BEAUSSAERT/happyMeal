@@ -54,6 +54,9 @@
         <button onclick="closeModal()" class="absolute top-0 right-0 m-4">Fermer</button>
         <h2 id="modalTitle" class="text-2xl mb-4">Nom de la recette</h2>
         <div id="modalContent">Détails de la recette...</div>
+        <svg onclick="toggleFavorite(this)" id="heart-icon" data-recipe-id="1" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 absolute top-12 right-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78v0z"/>
+        </svg>
       </div>
     </div>
       
@@ -78,5 +81,6 @@
   </footer>
 <script src="paginationRecette.js"></script>
 <script src="modalTouteRecette.js"></script>
+<script src="favoris.js"></script>
 </body>
 </html>
