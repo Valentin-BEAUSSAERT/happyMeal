@@ -9,3 +9,11 @@ main{
 .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Décalage horizontal, décalage vertical, flou, couleur */
 }
+
+
+.texte {
+    width: 110%; /* Largeur de la div */
+    height: 150%; /* Hauteur de la div */
+    background-color: #ffffff00; /* Couleur de fond de la div */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Ombre portée */
+}
