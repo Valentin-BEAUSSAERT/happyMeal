@@ -16,4 +16,10 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.hidden {
+  display: none;
+}
+
+/* Vous pouvez également ajouter des transitions pour un affichage en douceur, etc. */
+
 /* Vous pourriez avoir besoin d'ajuster ces styles selon votre mise en page exacte et vos préférences */
