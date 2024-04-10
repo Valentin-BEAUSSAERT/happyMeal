@@ -518,11 +518,11 @@ document.querySelectorAll('.image-recipe').forEach((img, index) => {
     const content = document.getElementById('modalContent');
   
     title.textContent = recette.nom;
-    content.innerHTML = `<p><strong>Catégorie:</strong> ${recette.categorie}</p>
-                         <p><strong>Temps de préparation:</strong> ${recette.temps_preparation}</p>
-                         <h3>Ingrédients:</h3>
-                         <ul>${recette.ingredients.map(i => `<li>${i.quantite} de ${i.nom}</li>`).join('')}</ul>
-                         <h3>Étapes:</h3>
+    content.innerHTML = `<p><strong>Catégorie:</strong> ${recette.categorie}</p><br>
+                         <p><strong>Temps de préparation:</strong> ${recette.temps_preparation}</p><br>
+                         <h3>Ingrédients:</h3><br>
+                         <ul>${recette.ingredients.map(i => `<li>${i.quantite} de ${i.nom}</li>`).join('')}</ul><br>
+                         <h3>Étapes:</h3><br>
                          <ol>${recette.etapes.map(e => `<li>${e}</li>`).join('')}</ol>`;
   
     modal.classList.remove('hidden');
