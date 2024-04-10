@@ -16,9 +16,13 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.hidden {
-  display: none;
+body {
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh;
 }
+
+
 
 /* Vous pouvez également ajouter des transitions pour un affichage en douceur, etc. */
 
