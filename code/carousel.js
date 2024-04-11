@@ -34,9 +34,11 @@ function setImage(imagePath, index) {
   //document.addEventListener('DOMContentLoaded', chooseRandomImageOnLoad);
   
   // Décommentez la ligne ci-dessous pour faire défiler automatiquement les images
-  // setInterval(nextImage, 5000);
+  
 
    Écouteur d'événement pour exécuter la fonction au chargement complet de la page */
+
+   setInterval(nextImage, 5000);
  document.addEventListener('DOMContentLoaded', function() {
   
     // Gestionnaire d'événements
