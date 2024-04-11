@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="shadow-md" style="background-color: #abf1ce">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo qui sert de lien vers la page d'accueil -->
+          <a href="#" class="flex items-center py-5 px-2">
+            <img src="../assets/logo.png" alt="Logo" class="h-12 w-auto mr-2" />
+            <!-- Assurez-vous de remplacer avec le bon chemin d'accès -->
+          </a>
+          <!-- Liens primaires -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
+              >Liste de Courses</a
+            >
+            <a
+              href="favoris.html"
+              class="py-5 px-3 text-gray-700 hover:text-gray-900"
+              >Liste de Favoris</a
+            >
+          </div>
+          <!-- Barre de recherche -->
+          <div class="flex items-center">
+            <input
+              type="search"
+              placeholder="Rechercher..."
+              class="px-2 py-1 border-2 border-gray-300 rounded-md mr-2"
+            />
+            <button
+              type="submit"
+              class="px-4 py-1 text-white bg-gray-800 rounded-md"
+            >
+              Rechercher
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto my-8">
+      <div class="relative text-center">
+        <button
+          onclick="prevImage()"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-md cursor-pointer z-10"
+        >
+          &lt;
+        </button>
+        <!-- Grande image -->
+        <img
+          id="mainImage"
+          src="../assets/30.webp"
+          alt="Image principale"
+          class="w-full h-auto mb-2"
+        />
+        <!-- Texte d'indication pour cliquer sur l'image -->
+        <p class="text-sm text-gray-600">
+          Cliquez sur l'image pour voir la recette
+        </p>
+        <button
+          onclick="nextImage()"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-md cursor-pointer z-10"
+        >
+          &gt;
+        </button>
+      </div>
+
+      <!-- Miniatures -->
+      <div class="flex overflow-x-auto space-x-2 py-4">
+        <img
+          onclick="setImage('../assets/30.webp', 0)"
+          src="../assets/30.webp"
+          alt="Miniature 24"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/31.webp', 1)"
+          src="../assets/31.webp"
+          alt="Miniature 25"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/32.webp', 2)"
+          src="../assets/32.webp"
+          alt="Miniature 26"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/33.webp', 3)"
+          src="../assets/33.webp"
+          alt="Miniature 27"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/34.webp', 4)"
+          src="../assets/34.webp"
+          alt="Miniature 28"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/42.webp', 5)"
+          src="../assets/42.webp"
+          alt="Miniature 29"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/35.webp', 11)"
+          src="../assets/35.webp"
+          alt="Miniature 30"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/43.webp', 12)"
+          src="../assets/43.webp"
+          alt="Miniature 35"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/36.webp', 6)"
+          src="../assets/36.webp"
+          alt="Miniature 30"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/37.webp', 7)"
+          src="../assets/37.webp"
+          alt="Miniature 31"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/38.webp', 8)"
+          src="../assets/38.webp"
+          alt="Miniature 32"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/39.webp', 9)"
+          src="../assets/39.webp"
+          alt="Miniature 33"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+        <img
+          onclick="setImage('../assets/40.webp', 10)"
+          src="../assets/40.webp"
+          alt="Miniature 34"
+          class="min-w-max w-24 h-24 object-cover cursor-pointer"
+        />
+
+        <!-- Ajoutez autant d'images que vous le souhaitez, en suivant ce modèle -->
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer
+      class="bg-gray-100 shadow-md shadow-top"
+      style="background-color: #abf1ce"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 text-center gap-4 items-center"
+      >
+        <!-- Logo -->
+        <div>
+          <img
+            src="../assets/logo.png"
+            alt="Logo"
+            class="h-12 w-auto mx-auto"
+          />
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-gray-700 text-sm">
+          &copy; 2024 LaPlateforme. Tous droits réservés.<br />8 Rue d'Hozier
+          Marseille 13002
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="flex justify-center gap-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Facebook</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Instagram</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Tik-Tok</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Snapchat</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="recipeModal"
+      class="hidden fixed z-50 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-40"
+    >
+      <!-- Contenu du modal -->
+      <div class="bg-white rounded-lg m-4 p-5 max-w-xl mx-auto my-20 relative">
+        <!-- Bouton de fermeture -->
+        <button onclick="closeModal()" class="absolute top-0 right-0 m-4">
+          Fermer
+        </button>
+        <!-- Titre du modal -->
+        <h2 id="modalTitle" class="text-2xl mb-4">Poulet rôti aux herbes</h2>
+        <!-- Description ou contenu de la recette -->
+        <p id="modalContent">Contenu de la recette...</p>
+      </div>
+    </div>
+
+    <script src="carousel.js"></script>
+    <script src="modalRecette.js"></script>
+  </body>
+</html>

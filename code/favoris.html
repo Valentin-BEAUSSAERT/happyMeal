@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste Favoris</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="favoris.css" />
+    <head>
+      <!-- Autres balises head -->
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        rel="stylesheet"
+      />
+    </head>
+  </head>
+  <body style="background-color: #fff">
+    <nav
+      class="shadow-md rounded-br-full rounded-bl-xl"
+      style="background-color: #fffff4"
+    >
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo qui sert de lien vers la page d'accueil -->
+          <a href="landingPage.html" class="flex items-center py-5 px-2">
+            <img src="../assets/logo.png" alt="Logo" class="h-12 w-auto mr-2" />
+            <!-- Assurez-vous de remplacer avec le bon chemin d'accès -->
+          </a>
+          <!-- Liens primaires -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
+              >Liste de Courses</a
+            >
+            <a
+              href="#"
+              class="py-5 px-3 text-gray-700 hover:text-gray-900 font-bold"
+              >Liste de Favoris</a
+            >
+          </div>
+          <!-- Barre de recherche -->
+          <div class="flex items-center">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Rechercher une recette ou un ingrédient"
+              class="px-2 py-1 border-2 border-black rounded-2xl -md mr-1"
+              style="background-color: transparent; width: 350px"
+            />
+            <button type="button" id="search-button" class="px-4 py-1 rounded">
+              <img
+                class="w-6 h-6"
+                src="/code/images/icons8-search.gif"
+                alt="logo search"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- TITRE : Liste de Favoris -->
+    <h1 class="text-3xl font-bold mb-4 flex items-center relative">
+      Liste de Favoris:
+    </h1>
+    <div id="favorisContainer"></div>
+    <!-- CAROUSEL -->
+    <div class="flex flex-wrap justify-center">
+      <!-- CARTE 1 -->
+      <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+        <div class="relative">
+          <img
+            src="/code/images/poulet roti.jpg"
+            alt="Image de la recette 1"
+            class="w-full h-auto rounded-lg"
+          />
+          <button class="absolute top-0 right-0 mt-2 mr-2 like-button">
+            <span class="heart">♥</span>
+            <!-- Bouton like -->
+          </button>
+          <div
+            class="absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 text-sm font-bold rounded-b-lg"
+          >
+            Poulet rôti aux fines herbes
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTE 2 -->
+      <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+        <div class="relative">
+          <img
+            src="/code/images/salade de quinoa.jpg"
+            alt="Image de la recette 2"
+            class="w-full h-auto rounded-lg"
+          />
+          <button class="absolute top-0 right-0 mt-2 mr-2 like-button">
+            <span class="heart">♥</span>
+            <!-- Bouton like -->
+          </button>
+          <div
+            class="absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 text-sm font-bold rounded-b-lg"
+          >
+            Salade de quinoa aux légumes
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTE 3 -->
+      <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
+        <div class="relative">
+          <img
+            src="/code/images/soupe de lentilles.jpg"
+            alt="Image de la recette 3"
+            class="w-full h-auto rounded-lg"
+          />
+          <button class="absolute top-0 right-0 mt-2 mr-2 like-button">
+            <span class="heart">♥</span>
+            <!-- Bouton like -->
+          </button>
+          <div
+            class="absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 text-sm font-bold rounded-b-lg"
+          >
+            Soupe de Lentilles
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------------FOOTER--------------------------------------------->
+    <footer
+      class="mt-auto bg-gray-100 shadow-md shadow-top"
+      style="background-color: #abf1ce"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 text-center gap-4 items-center"
+      >
+        <!-- Logo -->
+        <div>
+          <img
+            src="../assets/logo.png"
+            alt="Logo"
+            class="h-12 w-auto mx-auto"
+          />
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-gray-700 text-sm">
+          &copy; 2024 LaPlateforme. Tous droits réservés.<br />8 Rue d'Hozier
+          Marseille 13002
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="flex justify-center gap-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Facebook</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Instagram</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Tik-Tok</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Snapchat</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="favoris.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>
