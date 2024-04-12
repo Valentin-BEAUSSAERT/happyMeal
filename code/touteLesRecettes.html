@@ -19,9 +19,6 @@
           </a>
           <div class="hidden md:flex items-center space-x-1">
             <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
-              >Liste de Courses</a
-            >
-            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
               >Liste de Favoris</a
             >
             <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
@@ -165,6 +162,22 @@
 
           <div id="modalContent">Détails de la recette...</div>
         </div>
+      </div>
+    </div>
+    <!-- Bouton pour ouvrir la modal -->
+    <button id="openModalBtn" class="open-modal-btn">
+      Ouvrir la liste de courses
+    </button>
+
+    <!-- Modal -->
+    <div id="shoppingListModal" class="modal">
+      <div class="modal-content">
+        <!-- Contenu de la modal ici -->
+        <span class="close">&times;</span>
+        <h2>Liste de courses</h2>
+        <ul id="shoppingList"></ul>
+        <button id="clearShoppingListBtn">Effacer la liste de courses</button>
+        <!-- Bouton pour fermer la modal -->
       </div>
     </div>
 

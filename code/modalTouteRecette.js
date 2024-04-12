@@ -622,3 +622,35 @@ function generateRecipeId(recipeName) {
     (recipe) => recipe.nom.toLowerCase() === recipeName.toLowerCase()
   );
 }
+// Sélection de la modal et du bouton
+const modal = document.getElementById("shoppingListModal");
+const openModalBtn = document.getElementById("openModalBtn");
+
+// Écouteur d'événement pour le survol du bouton
+openModalBtn.addEventListener("mouseover", () => {
+  openModalBtn.textContent = "Ouvrir la liste de courses";
+});
+
+// Écouteur d'événement pour le clic sur le bouton
+openModalBtn.addEventListener("click", () => {
+  modal.style.display = "block"; // Afficher la modal lorsque le bouton est cliqué
+});
+// Sélection de l'élément de la petite croix
+const closeBtn = document.querySelector(".close");
+
+// Écouteur d'événement pour le clic sur la petite croix
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none"; // Cacher la modal lorsque la croix est cliquée
+});
+
+// Écouteur d'événement pour le bouton de fermeture (comme précédemment)
+
+// Sélection du bouton "Effacer la liste de course"
+const clearShoppingListBtn = document.getElementById("clearShoppingListBtn");
+
+// Écouteur d'événement pour le clic sur le bouton "Effacer la liste de course"
+clearShoppingListBtn.addEventListener("click", () => {
+  // Effacer la liste de courses (par exemple, vider le contenu de la liste)
+  const shoppingList = document.getElementById("shoppingList");
+  shoppingList.innerHTML = "";
+});
