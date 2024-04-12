@@ -61,6 +61,7 @@
           alt="Recette 1"
           class="image-recipe w-full h-auto mb-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
         />
+
         <img
           id="recette-2"
           src="../assets/31.webp"
@@ -159,21 +160,11 @@
             Fermer
           </button>
           <h2 id="modalTitle" class="text-2xl mb-4">Nom de la recette</h2>
+          <!-- Ajoutez le bouton de favoris à côté du titre -->
+          <!-- HTML pour les boutons de favoris générés dynamiquement -->
+          <div id="favorisButtonsContainer"></div>
+
           <div id="modalContent">Détails de la recette...</div>
-          <svg
-            onclick="toggleFavorite(this)"
-            id="heart-icon"
-            data-recipe-id="1"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 absolute top-12 right-4 cursor-pointer"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78v0z"
-            />
-          </svg>
         </div>
       </div>
     </div>

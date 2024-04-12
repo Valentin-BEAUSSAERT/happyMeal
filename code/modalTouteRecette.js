@@ -519,50 +519,6 @@ const recettes = [
 // Ajout d'écouteurs d'événements aux images pour ouvrir la modal
 // Cela peut être dans votre script de modal
 function openModalWithRecipeDetails(index) {
-  // Récupération des détails de la recette et mise à jour du modal...
-  // ...
-
-  // Mise à jour du coeur pour correspondre à l'état de favori actuel
-  const heartIcon = document.getElementById("heart-icon");
-  const isFavorite =
-    localStorage.getItem("favorite_recipe_" + index) === "true";
-  heartIcon.setAttribute("data-favorite", isFavorite);
-  heartIcon.setAttribute("data-recipe-id", index); // Stockez l'index/id de la recette sur l'icône du cœur
-  updateHeartIconAppearance(heartIcon);
-}
-
-// Fonction pour changer l'apparence du cœur et sauvegarder l'état des favoris
-function toggleFavorite(heartIcon) {
-  const recipeId = heartIcon.getAttribute("data-recipe-id");
-  const isFavorite = heartIcon.getAttribute("data-favorite") === "true";
-  const newFavoriteStatus = !isFavorite;
-  heartIcon.setAttribute("data-favorite", newFavoriteStatus);
-  localStorage.setItem("favorite_recipe_" + recipeId, newFavoriteStatus);
-  updateHeartIconAppearance(heartIcon);
-}
-
-// Fonction pour mettre à jour l'apparence du cœur basée sur l'attribut 'data-favorite'
-function updateHeartIconAppearance(heartIcon) {
-  if (heartIcon.getAttribute("data-favorite") === "true") {
-    heartIcon.classList.add("favorite-active");
-  } else {
-    heartIcon.classList.remove("favorite-active");
-  }
-}
-
-// Lorsque le DOM est chargé, configurez l'état initial des favoris
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".image-recipe").forEach((img, index) => {
-    img.addEventListener("click", () => openModalWithRecipeDetails(index));
-  });
-});
-/*---------------------------------------------*/
-
-document.querySelectorAll(".image-recipe").forEach((img, index) => {
-  img.addEventListener("click", () => openModalWithRecipeDetails(index));
-});
-
-function openModalWithRecipeDetails(index) {
   const recette = recettes[index];
   const modal = document.getElementById("recipeModal");
   const title = document.getElementById("modalTitle");
@@ -586,6 +542,72 @@ function openModalWithRecipeDetails(index) {
 
   modal.classList.remove("hidden");
 }
+// Fonction pour basculer l'état de favori et mettre à jour l'apparence du bouton dans la modal
+function toggleFavorite(button) {
+  const recipeId = button.getAttribute("data-recipe-id");
+  const isFavorite =
+    localStorage.getItem("favorite_recipe_" + recipeId) === "true";
+  const newFavoriteStatus = !isFavorite;
+
+  // Mettre à jour le statut de favori dans le stockage local
+  localStorage.setItem("favorite_recipe_" + recipeId, newFavoriteStatus);
+
+  // Mettre à jour l'apparence du bouton
+  if (newFavoriteStatus) {
+    button.classList.add("favorite-active");
+  } else {
+    button.classList.remove("favorite-active");
+  }
+
+  // Si la recette est désormais un favori, ajoutez-la à la liste des favoris
+  if (newFavoriteStatus) {
+    const recipe = recettes[recipeId];
+    addToFavorites(recipe);
+  }
+}
+
+// Fonction pour ajouter une recette aux favoris
+function addToFavorites(recipe) {
+  // Vous pouvez ajouter la recette à une liste de favoris dans le stockage local
+  // Et/ou vous pouvez envoyer la recette à la page favoris.html
+}
+const listeIdsRecettes = [
+  "recette-1",
+  "recette-2",
+  "recette-3",
+  "recette-4",
+  "recette-5",
+  "recette-12",
+  "recette-6",
+  "recette-13",
+  "recette-7",
+  "recette-8",
+  "recette-9",
+  "recette-10",
+  "recette-11",
+];
+// JavaScript pour générer les boutons de favoris
+const favorisButtonsContainer = document.getElementById(
+  "favorisButtonsContainer"
+);
+
+listeIdsRecettes.forEach((idRecette) => {
+  const favorisButton = document.createElement("button");
+  favorisButton.setAttribute(
+    "class",
+    "favorite-button absolute top-4 right-4 mt-2"
+  );
+  favorisButton.setAttribute("onclick", "toggleFavorite(this)");
+  favorisButton.setAttribute("data-recipe-id", idRecette);
+  favorisButton.innerHTML = '<span class="heart">♥</span>';
+  favorisButtonsContainer.appendChild(favorisButton);
+});
+
+/*---------------------------------------------*/
+
+document.querySelectorAll(".image-recipe").forEach((img, index) => {
+  img.addEventListener("click", () => openModalWithRecipeDetails(index));
+});
 
 function closeModal() {
   document.getElementById("recipeModal").classList.add("hidden");

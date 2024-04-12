@@ -26,12 +26,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
-.favorite-active svg {
-  fill: red;
-  stroke: red;
+.favorite-active {
+  color: red;
 }
-
 /* Vous pouvez également ajouter des transitions pour un affichage en douceur, etc. */
 
 /* Vous pourriez avoir besoin d'ajuster ces styles selon votre mise en page exacte et vos préférences */
