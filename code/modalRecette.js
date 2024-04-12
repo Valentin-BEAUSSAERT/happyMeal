@@ -578,3 +578,43 @@ function fillModalWithRecipe(index) {
     ${etapesHtml}
 `;
 }
+const searchBar = document.getElementById("search-bar");
+const autocompleteResults = document.getElementById("autocomplete-results");
+
+searchBar.addEventListener("input", function () {
+  const searchValue = searchBar.value.toLowerCase();
+  const matchingRecipes = recettes.filter((recipe) =>
+    recipe.nom.toLowerCase().includes(searchValue)
+  );
+
+  // Afficher les résultats correspondants
+  showAutocompleteResults(matchingRecipes);
+});
+
+function showAutocompleteResults(results) {
+  autocompleteResults.innerHTML = ""; // Nettoyer les résultats précédents
+  if (results.length === 0) {
+    autocompleteResults.classList.add("hidden"); // Cacher la liste s'il n'y a pas de correspondance
+    return;
+  }
+
+  autocompleteResults.classList.remove("hidden"); // Afficher la liste si des correspondances ont été trouvées
+
+  // Créer et ajouter les éléments HTML pour chaque résultat
+  results.forEach((recipe) => {
+    const resultItem = document.createElement("div");
+    resultItem.textContent = recipe.nom;
+    resultItem.classList.add("autocomplete-result-item");
+
+    // Gérer le clic sur un élément de résultat
+    resultItem.addEventListener("click", function () {
+      // Cacher la liste d'autocomplétion
+      autocompleteResults.classList.add("hidden");
+      // Afficher la recette correspondante sur la page
+      displayRecipe(recipe);
+    });
+
+    // Ajouter l'élément à la liste des résultats
+    autocompleteResults.appendChild(resultItem);
+  });
+}

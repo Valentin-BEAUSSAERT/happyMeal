@@ -635,6 +635,7 @@ openModalBtn.addEventListener("mouseover", () => {
 openModalBtn.addEventListener("click", () => {
   modal.style.display = "block"; // Afficher la modal lorsque le bouton est cliqué
 });
+
 // Sélection de l'élément de la petite croix
 const closeBtn = document.querySelector(".close");
 
@@ -643,14 +644,68 @@ closeBtn.addEventListener("click", () => {
   modal.style.display = "none"; // Cacher la modal lorsque la croix est cliquée
 });
 
-// Écouteur d'événement pour le bouton de fermeture (comme précédemment)
-
 // Sélection du bouton "Effacer la liste de course"
-const clearShoppingListBtn = document.getElementById("clearShoppingListBtn");
+const clearShoppingListBtn = document.getElementById("clear-button");
 
 // Écouteur d'événement pour le clic sur le bouton "Effacer la liste de course"
 clearShoppingListBtn.addEventListener("click", () => {
   // Effacer la liste de courses (par exemple, vider le contenu de la liste)
   const shoppingList = document.getElementById("shoppingList");
   shoppingList.innerHTML = "";
+
+  // Supprimer les éléments du local storage
+  localStorage.removeItem("ingredients");
+});
+
+function addToShoppingList(nom) {
+  // Vérifier si l'ingrédient est déjà présent dans la liste de courses
+  if (!isIngredientAlreadyAdded(nom)) {
+    // Ajouter l'ingrédient à la liste de courses
+    const shoppingList = document.getElementById("shopping-list");
+    const listItem = document.createElement("li");
+    listItem.textContent = `${nom}`;
+    shoppingList.appendChild(listItem);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Supprimer";
+    deleteButton.classList.add("delete-button");
+    deleteButton.addEventListener("click", function () {
+      // Supprimer l'ingrédient de la liste de courses
+      shoppingList.removeChild(listItem);
+    });
+    listItem.appendChild(deleteButton);
+
+    // Ajouter l'ingrédient au localStorage
+    const ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
+    ingredients.push(nom);
+    localStorage.setItem("ingredients", JSON.stringify(ingredients));
+
+    console.log(`Ingrédient ajouté à la liste de courses : ${nom}`);
+  } else {
+    alert("Cet ingrédient est déjà présent dans votre liste de courses.");
+  }
+}
+
+// Fonction pour vérifier si un ingrédient est déjà présent dans la liste de courses
+function isIngredientAlreadyAdded(nom) {
+  const shoppingList = document.getElementById("shopping-list");
+  const ingredients = Array.from(shoppingList.getElementsByTagName("li"));
+  return ingredients.some((item) => item.textContent === nom);
+}
+
+// Écouteur d'événement pour le clic sur le bouton "Effacer la liste de courses"
+const clearButton = document.getElementById("clear-button");
+
+clearButton.addEventListener("click", function () {
+  const shoppingList = document.getElementById("shopping-list");
+
+  // Supprimer tous les enfants de la liste de courses
+  while (shoppingList.firstChild) {
+    shoppingList.removeChild(shoppingList.firstChild);
+  }
+});
+
+// Appeler la fonction pour générer les boutons "+" pour chaque recette
+recettes.forEach((recette, index) => {
+  generateAddButtons(index);
 });

@@ -14,29 +14,35 @@
     <nav class="shadow-md" style="background-color: #abf1ce">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between">
-          <a href="#" class="flex items-center py-5 px-2">
+          <a href="landingPage.html" class="flex items-center py-5 px-2">
             <img src="../assets/logo.png" alt="Logo" class="h-12 w-auto mr-2" />
           </a>
           <div class="hidden md:flex items-center space-x-1">
-            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
+            <a
+              href="favoris.html"
+              class="py-5 px-3 text-gray-700 hover:text-gray-900"
               >Liste de Favoris</a
             >
-            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
+            <a
+              href="touteLesRecettes.html"
+              class="py-5 px-3 text-gray-700 hover:text-gray-900 font-bold"
               >Toutes nos recettes</a
             >
           </div>
           <div class="flex items-center">
             <input
               type="search"
-              placeholder="Rechercher..."
-              class="px-2 py-1 border-2 border-gray-300 rounded-md mr-2"
               id="search-bar"
+              placeholder="Rechercher une recette ou un ingrédient"
+              class="px-2 py-1 border-2 border-black rounded-2xl -md mr-1"
+              style="background-color: transparent; width: 350px"
             />
-            <button
-              type="submit"
-              class="px-4 py-1 text-white bg-gray-800 rounded-md"
-            >
-              Rechercher
+            <button type="button" id="search-button" class="px-4 py-1 rounded">
+              <img
+                class="w-6 h-6"
+                src="/code/images/icons8-search.gif"
+                alt="logo search"
+              />
             </button>
           </div>
           <div
@@ -174,9 +180,9 @@
       <div class="modal-content">
         <!-- Contenu de la modal ici -->
         <span class="close">&times;</span>
-        <h2>Liste de courses</h2>
-        <ul id="shoppingList"></ul>
-        <button id="clearShoppingListBtn">Effacer la liste de courses</button>
+        <h2>Liste de courses:</h2>
+        <ul id="shopping-list"></ul>
+        <button id="clear-button">Effacer la liste de courses</button>
         <!-- Bouton pour fermer la modal -->
       </div>
     </div>
