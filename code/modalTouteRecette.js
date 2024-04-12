@@ -533,75 +533,27 @@ function openModalWithRecipeDetails(index) {
                          }</p><br>
                          <h3>Ingrédients:</h3><br>
                          <ul>${recette.ingredients
-                           .map((i) => `<li>${i.quantite} de ${i.nom}</li>`)
+                           .map(
+                             (i) => `<li>${i.quantite} de ${i.nom}
+                           <button class="add-to-list-btn">+</button></li>`
+                           )
                            .join("")}</ul><br>
                          <h3>Étapes:</h3><br>
                          <ol>${recette.etapes
                            .map((e) => `<li>${e}</li>`)
                            .join("")}</ol>`;
+  // Ajouter un gestionnaire d'événements à chaque bouton "+" dans la modal
+  document.querySelectorAll(".add-to-list-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // Récupérez le texte de l'ingrédient associé au bouton
+      const ingredient = this.previousSibling.textContent.trim(); // Le texte précédent est l'ingrédient
+      // Ajoutez l'ingrédient à la liste de courses
+      addToShoppingList(ingredient);
+    });
+  });
 
   modal.classList.remove("hidden");
 }
-// Fonction pour basculer l'état de favori et mettre à jour l'apparence du bouton dans la modal
-function toggleFavorite(button) {
-  const recipeId = button.getAttribute("data-recipe-id");
-  const isFavorite =
-    localStorage.getItem("favorite_recipe_" + recipeId) === "true";
-  const newFavoriteStatus = !isFavorite;
-
-  // Mettre à jour le statut de favori dans le stockage local
-  localStorage.setItem("favorite_recipe_" + recipeId, newFavoriteStatus);
-
-  // Mettre à jour l'apparence du bouton
-  if (newFavoriteStatus) {
-    button.classList.add("favorite-active");
-  } else {
-    button.classList.remove("favorite-active");
-  }
-
-  // Si la recette est désormais un favori, ajoutez-la à la liste des favoris
-  if (newFavoriteStatus) {
-    const recipe = recettes[recipeId];
-    addToFavorites(recipe);
-  }
-}
-
-// Fonction pour ajouter une recette aux favoris
-function addToFavorites(recipe) {
-  // Vous pouvez ajouter la recette à une liste de favoris dans le stockage local
-  // Et/ou vous pouvez envoyer la recette à la page favoris.html
-}
-const listeIdsRecettes = [
-  "recette-1",
-  "recette-2",
-  "recette-3",
-  "recette-4",
-  "recette-5",
-  "recette-12",
-  "recette-6",
-  "recette-13",
-  "recette-7",
-  "recette-8",
-  "recette-9",
-  "recette-10",
-  "recette-11",
-];
-// JavaScript pour générer les boutons de favoris
-const favorisButtonsContainer = document.getElementById(
-  "favorisButtonsContainer"
-);
-
-listeIdsRecettes.forEach((idRecette) => {
-  const favorisButton = document.createElement("button");
-  favorisButton.setAttribute(
-    "class",
-    "favorite-button absolute top-4 right-4 mt-2"
-  );
-  favorisButton.setAttribute("onclick", "toggleFavorite(this)");
-  favorisButton.setAttribute("data-recipe-id", idRecette);
-  favorisButton.innerHTML = '<span class="heart">♥</span>';
-  favorisButtonsContainer.appendChild(favorisButton);
-});
 
 /*---------------------------------------------*/
 
