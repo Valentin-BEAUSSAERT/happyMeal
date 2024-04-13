@@ -1,34 +1,111 @@
 .shadow-top {
-    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
 
-  .fade {
-    animation: fadeEffect 1s;
-  }
-  
-  @keyframes fadeEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+.fade {
+  animation: fadeEffect 1s;
+}
 
-  /* Styles pour le fond du modal */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles pour le fond du modal */
 .bg-opacity-40 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 body {
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
-
-.favorite-active svg {
-  fill: red;
-  stroke: red;
+.add-to-list-btn {
+  border: 1px solid #ccc;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  background-color: #abf1ce;
 }
 
-
-
+.add-to-list-btn:hover::after {
+  content: "Ajouter à la liste de courses";
+}
 /* Vous pouvez également ajouter des transitions pour un affichage en douceur, etc. */
 
 /* Vous pourriez avoir besoin d'ajuster ces styles selon votre mise en page exacte et vos préférences */
+/* Positionnement du bouton */
+.open-modal-btn {
+  position: fixed;
+  top: 20%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+
+  padding: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+/* Style du texte lorsqu'on passe la souris sur le bouton */
+.open-modal-btn:hover {
+  color: #555;
+}
+/* Style de la modal */
+.modal {
+  display: none; /* Cachée par défaut */
+  position: fixed; /* Position fixe pour la modal */
+  z-index: 1; /* Placez la modal au-dessus du contenu */
+  right: 0; /* Position sur le côté droit */
+  top: 0;
+  width: 280px; /* Largeur de la modal */
+  height: 90%; /* Pleine hauteur */
+  overflow: auto; /* Ajouter un défilement si nécessaire */
+  background-color: #fefefe;
+  border-left: 1px solid #888; /* Ajouter une bordure gauche */
+  border-radius: 5%;
+}
+
+/* Style du contenu de la modal */
+.modal-content {
+  padding: 20px;
+}
+
+/* Style pour le bouton de fermeture (×) */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#clear-button {
+  border: 1px solid;
+  padding: 5px 5px;
+  border-radius: 5%;
+  background-color: #abf1ce;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.delete-button {
+  border: 1px solid;
+  margin-left: 10px;
+  background-color: #abf1ce;
+  border-radius: 5px;
+}

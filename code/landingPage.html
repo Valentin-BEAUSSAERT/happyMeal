@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy</title>
+    <title>Happy Meal</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -15,14 +15,16 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center">
           <!-- Logo qui sert de lien vers la page d'accueil -->
-          <a href="#" class="flex items-center py-5 px-2">
+          <a href="landingPage.html" class="flex items-center py-5 px-2">
             <img src="../assets/logo.png" alt="Logo" class="h-12 w-auto mr-2" />
             <!-- Assurez-vous de remplacer avec le bon chemin d'accès -->
           </a>
           <!-- Liens primaires -->
           <div class="hidden md:flex items-center space-x-1">
-            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900"
-              >Liste de Courses</a
+            <a
+              href="touteLesRecettes.html"
+              class="py-5 px-3 text-gray-700 hover:text-gray-900"
+              >Toutes nos recettes</a
             >
             <a
               href="favoris.html"
@@ -34,14 +36,17 @@
           <div class="flex items-center">
             <input
               type="search"
-              placeholder="Rechercher..."
-              class="px-2 py-1 border-2 border-gray-300 rounded-md mr-2"
+              id="search-bar"
+              placeholder="Rechercher une recette ou un ingrédient"
+              class="px-2 py-1 border-2 border-black rounded-2xl -md mr-1"
+              style="background-color: transparent; width: 350px"
             />
-            <button
-              type="submit"
-              class="px-4 py-1 text-white bg-gray-800 rounded-md"
-            >
-              Rechercher
+            <button type="button" id="search-button" class="px-4 py-1 rounded">
+              <img
+                class="w-6 h-6"
+                src="/code/images/icons8-search.gif"
+                alt="logo search"
+              />
             </button>
           </div>
         </div>
